@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="api@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.9">
+    <root id="1">
+      <ServerVersion>9.6.9</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="api">
+      <ObjectId>16384</ObjectId>
+      <IntrospectionStateNumber>105</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12404</ObjectId>
+      <Comment>default administrative connection database</Comment>
+    </database>
+    <role id="4" parent="1" name="api-platform">
+      <ObjectId>16385</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="5" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="6" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="7" parent="2" name="information_schema">
+      <ObjectId>12116</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+    </schema>
+    <schema id="9" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="10" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+    </schema>
+    <schema id="11" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <IntrospectionTimestamp>2018-06-04.12:27:42.484</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1269</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="13" parent="2" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="14" parent="2" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="15" parent="2" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="16" parent="2" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="17" parent="2" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="18" parent="2" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <sequence id="19" parent="12" name="city_id_seq">
+      <ObjectId>19206</ObjectId>
+      <StateNumber>1225</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="20" parent="12" name="driver_id_seq">
+      <ObjectId>19200</ObjectId>
+      <StateNumber>1222</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="21" parent="12" name="driver_status_id_seq">
+      <ObjectId>19212</ObjectId>
+      <StateNumber>1228</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="22" parent="12" name="order_id_seq">
+      <ObjectId>19198</ObjectId>
+      <StateNumber>1221</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="23" parent="12" name="order_status_id_seq">
+      <ObjectId>19202</ObjectId>
+      <StateNumber>1223</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="24" parent="12" name="truck_id_seq">
+      <ObjectId>19204</ObjectId>
+      <StateNumber>1224</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="25" parent="12" name="truck_state_id_seq">
+      <ObjectId>19214</ObjectId>
+      <StateNumber>1229</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="26" parent="12" name="user_id_seq">
+      <ObjectId>19347</ObjectId>
+      <StateNumber>1269</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="27" parent="12" name="way_point_id_seq">
+      <ObjectId>19210</ObjectId>
+      <StateNumber>1227</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="28" parent="12" name="way_point_type_id_seq">
+      <ObjectId>19208</ObjectId>
+      <StateNumber>1226</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="29" parent="12" name="city">
+      <ObjectId>19260</ObjectId>
+      <StateNumber>1264</StateNumber>
+    </table>
+    <table id="30" parent="12" name="driver">
+      <ObjectId>19231</ObjectId>
+      <StateNumber>1261</StateNumber>
+    </table>
+    <table id="31" parent="12" name="driver_status">
+      <ObjectId>19277</ObjectId>
+      <StateNumber>1258</StateNumber>
+    </table>
+    <table id="32" parent="12" name="drivers_trucks">
+      <ObjectId>19242</ObjectId>
+      <StateNumber>1262</StateNumber>
+    </table>
+    <table id="33" parent="12" name="migration_versions">
+      <ObjectId>16543</ObjectId>
+      <StateNumber>632</StateNumber>
+    </table>
+    <table id="34" parent="12" name="order">
+      <ObjectId>19216</ObjectId>
+      <StateNumber>1260</StateNumber>
+    </table>
+    <table id="35" parent="12" name="order_status">
+      <ObjectId>19249</ObjectId>
+      <StateNumber>1254</StateNumber>
+    </table>
+    <table id="36" parent="12" name="truck">
+      <ObjectId>19254</ObjectId>
+      <StateNumber>1263</StateNumber>
+    </table>
+    <table id="37" parent="12" name="truck_state">
+      <ObjectId>19282</ObjectId>
+      <StateNumber>1263</StateNumber>
+    </table>
+    <table id="38" parent="12" name="user">
+      <ObjectId>19349</ObjectId>
+      <StateNumber>1269</StateNumber>
+    </table>
+    <table id="39" parent="12" name="way_point">
+      <ObjectId>19270</ObjectId>
+      <StateNumber>1265</StateNumber>
+    </table>
+    <table id="40" parent="12" name="way_point_type">
+      <ObjectId>19265</ObjectId>
+      <StateNumber>1265</StateNumber>
+    </table>
+    <table id="41" parent="12" name="way_points_orders">
+      <ObjectId>19224</ObjectId>
+      <StateNumber>1257</StateNumber>
+    </table>
+    <column id="42" parent="29" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1247</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="43" parent="29" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1247</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="44" parent="29" name="distance">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1247</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="45" parent="29" name="city_pkey">
+      <ObjectId>19263</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="46" parent="29" name="city_pkey">
+      <ObjectId>19264</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>city_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="47" parent="30" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1237</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="48" parent="30" name="status_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1237</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="49" parent="30" name="city_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1237</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="50" parent="30" name="order_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1237</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="51" parent="30" name="first_name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1237</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="52" parent="30" name="last_name">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1237</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="53" parent="30" name="hours">
+      <Position>7</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1237</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="54" parent="30" name="driver_pkey">
+      <ObjectId>19237</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="55" parent="30" name="uniq_11667cd96bf700bd">
+      <ObjectId>19239</ObjectId>
+      <ColNames>status_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="56" parent="30" name="uniq_11667cd98bac62af">
+      <ObjectId>19240</ObjectId>
+      <ColNames>city_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="57" parent="30" name="idx_11667cd98d9f6d38">
+      <ObjectId>19241</ObjectId>
+      <ColNames>order_id</ColNames>
+    </index>
+    <key id="58" parent="30" name="driver_pkey">
+      <ObjectId>19238</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>driver_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="59" parent="30" name="fk_11667cd96bf700bd">
+      <ObjectId>19307</ObjectId>
+      <ColNames>status_id</ColNames>
+      <RefTableId>19277</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>driver_status</RefTableName>
+      <RefKeyName>driver_status_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="60" parent="30" name="fk_11667cd98bac62af">
+      <ObjectId>19312</ObjectId>
+      <ColNames>city_id</ColNames>
+      <RefTableId>19260</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>city</RefTableName>
+      <RefKeyName>city_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="61" parent="30" name="fk_11667cd98d9f6d38">
+      <ObjectId>19317</ObjectId>
+      <ColNames>order_id</ColNames>
+      <RefTableId>19216</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>order</RefTableName>
+      <RefKeyName>order_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="62" parent="31" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1252</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="63" parent="31" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1252</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="64" parent="31" name="driver_status_pkey">
+      <ObjectId>19280</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="65" parent="31" name="driver_status_pkey">
+      <ObjectId>19281</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>driver_status_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="66" parent="32" name="driver_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1241</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="67" parent="32" name="truck_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1241</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="68" parent="32" name="drivers_trucks_pkey">
+      <ObjectId>19245</ObjectId>
+      <ColNames>driver_id
+truck_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="69" parent="32" name="idx_69031e1cc3423909">
+      <ObjectId>19247</ObjectId>
+      <ColNames>driver_id</ColNames>
+    </index>
+    <index id="70" parent="32" name="idx_69031e1cc6957cce">
+      <ObjectId>19248</ObjectId>
+      <ColNames>truck_id</ColNames>
+    </index>
+    <key id="71" parent="32" name="drivers_trucks_pkey">
+      <ObjectId>19246</ObjectId>
+      <ColNames>driver_id
+truck_id</ColNames>
+      <UnderlyingIndexName>drivers_trucks_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="72" parent="32" name="fk_69031e1cc3423909">
+      <ObjectId>19322</ObjectId>
+      <ColNames>driver_id</ColNames>
+      <RefTableId>19231</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>driver</RefTableName>
+      <RefKeyName>driver_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="73" parent="32" name="fk_69031e1cc6957cce">
+      <ObjectId>19327</ObjectId>
+      <ColNames>truck_id</ColNames>
+      <RefTableId>19254</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>truck</RefTableName>
+      <RefKeyName>truck_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="74" parent="33" name="version">
+      <Position>1</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>632</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="75" parent="33" name="migration_versions_pkey">
+      <ObjectId>16546</ObjectId>
+      <ColNames>version</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="76" parent="33" name="migration_versions_pkey">
+      <ObjectId>16547</ObjectId>
+      <ColNames>version</ColNames>
+      <UnderlyingIndexName>migration_versions_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="77" parent="34" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1230</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="78" parent="34" name="status_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1230</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="79" parent="34" name="truck_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1230</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="80" parent="34" name="unique_id">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1230</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="81" parent="34" name="order_pkey">
+      <ObjectId>19219</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="82" parent="34" name="uniq_f52993986bf700bd">
+      <ObjectId>19222</ObjectId>
+      <ColNames>status_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="83" parent="34" name="uniq_f5299398c6957cce">
+      <ObjectId>19223</ObjectId>
+      <ColNames>truck_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="84" parent="34" name="uniq_f5299398e3c68343">
+      <ObjectId>19221</ObjectId>
+      <ColNames>unique_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="85" parent="34" name="order_pkey">
+      <ObjectId>19220</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>order_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="86" parent="34" name="fk_f52993986bf700bd">
+      <ObjectId>19287</ObjectId>
+      <ColNames>status_id</ColNames>
+      <RefTableId>19249</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>order_status</RefTableName>
+      <RefKeyName>order_status_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="87" parent="34" name="fk_f5299398c6957cce">
+      <ObjectId>19292</ObjectId>
+      <ColNames>truck_id</ColNames>
+      <RefTableId>19254</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>truck</RefTableName>
+      <RefKeyName>truck_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="88" parent="35" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1244</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="89" parent="35" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1244</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="90" parent="35" name="order_status_pkey">
+      <ObjectId>19252</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="91" parent="35" name="order_status_pkey">
+      <ObjectId>19253</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>order_status_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="92" parent="36" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1245</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="93" parent="36" name="state_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1245</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="94" parent="36" name="registration_number">
+      <Position>3</Position>
+      <DataType>varchar(7)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1245</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="95" parent="36" name="drivers_count">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1245</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="96" parent="36" name="capacity">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1245</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="97" parent="36" name="truck_pkey">
+      <ObjectId>19257</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="98" parent="36" name="uniq_cdccf30a5d83cc1">
+      <ObjectId>19259</ObjectId>
+      <ColNames>state_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="99" parent="36" name="truck_pkey">
+      <ObjectId>19258</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>truck_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="100" parent="36" name="fk_cdccf30a5d83cc1">
+      <ObjectId>19332</ObjectId>
+      <ColNames>state_id</ColNames>
+      <RefTableId>19282</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>truck_state</RefTableName>
+      <RefKeyName>truck_state_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="101" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1253</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="102" parent="37" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1253</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="103" parent="37" name="truck_state_pkey">
+      <ObjectId>19285</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="104" parent="37" name="truck_state_pkey">
+      <ObjectId>19286</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>truck_state_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="105" parent="38" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1269</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="106" parent="38" name="email">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1269</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="107" parent="38" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1269</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="108" parent="38" name="roles">
+      <Position>4</Position>
+      <Comment>(DC2Type:json_array)</Comment>
+      <DataType>json|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1269</StateNumber>
+      <TypeId>114</TypeId>
+    </column>
+    <column id="109" parent="38" name="first_name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1269</StateNumber>
+      <DefaultExpression>NULL::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="110" parent="38" name="last_name">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1269</StateNumber>
+      <DefaultExpression>NULL::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="111" parent="38" name="user_pkey">
+      <ObjectId>19357</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="112" parent="38" name="uniq_8d93d649e7927c74">
+      <ObjectId>19359</ObjectId>
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="113" parent="38" name="user_pkey">
+      <ObjectId>19358</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>user_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="114" parent="39" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1249</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="115" parent="39" name="city_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1249</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="116" parent="39" name="way_point_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1249</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="117" parent="39" name="way_point_pkey">
+      <ObjectId>19273</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="118" parent="39" name="idx_9b2531748bac62af">
+      <ObjectId>19275</ObjectId>
+      <ColNames>city_id</ColNames>
+    </index>
+    <index id="119" parent="39" name="idx_9b253174b8e0d6d2">
+      <ObjectId>19276</ObjectId>
+      <ColNames>way_point_id</ColNames>
+    </index>
+    <key id="120" parent="39" name="way_point_pkey">
+      <ObjectId>19274</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>way_point_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="121" parent="39" name="fk_9b2531748bac62af">
+      <ObjectId>19337</ObjectId>
+      <ColNames>city_id</ColNames>
+      <RefTableId>19260</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>city</RefTableName>
+      <RefKeyName>city_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="122" parent="39" name="fk_9b253174b8e0d6d2">
+      <ObjectId>19342</ObjectId>
+      <ColNames>way_point_id</ColNames>
+      <RefTableId>19265</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>way_point_type</RefTableName>
+      <RefKeyName>way_point_type_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="123" parent="40" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1248</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="124" parent="40" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1248</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="125" parent="40" name="way_point_type_pkey">
+      <ObjectId>19268</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="126" parent="40" name="way_point_type_pkey">
+      <ObjectId>19269</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>way_point_type_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="127" parent="41" name="order_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1234</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="128" parent="41" name="way_point_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1234</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="129" parent="41" name="way_points_orders_pkey">
+      <ObjectId>19227</ObjectId>
+      <ColNames>order_id
+way_point_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="130" parent="41" name="idx_11343f018d9f6d38">
+      <ObjectId>19229</ObjectId>
+      <ColNames>order_id</ColNames>
+    </index>
+    <index id="131" parent="41" name="idx_11343f01b8e0d6d2">
+      <ObjectId>19230</ObjectId>
+      <ColNames>way_point_id</ColNames>
+    </index>
+    <key id="132" parent="41" name="way_points_orders_pkey">
+      <ObjectId>19228</ObjectId>
+      <ColNames>order_id
+way_point_id</ColNames>
+      <UnderlyingIndexName>way_points_orders_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="133" parent="41" name="fk_11343f018d9f6d38">
+      <ObjectId>19297</ObjectId>
+      <ColNames>order_id</ColNames>
+      <RefTableId>19216</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>order</RefTableName>
+      <RefKeyName>order_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="134" parent="41" name="fk_11343f01b8e0d6d2">
+      <ObjectId>19302</ObjectId>
+      <ColNames>way_point_id</ColNames>
+      <RefTableId>19270</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>way_point</RefTableName>
+      <RefKeyName>way_point_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
